@@ -1,4 +1,5 @@
-using EjercicioService.Application.Repository;
+using EjercicioService.Application.Repositories;
+using EjercicioService.Application.Services;
 using EjercicioService.Infrastructure;
 using EjercicioService.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -12,10 +13,13 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllers();
 
-builder.Services.AddDbContext<ApplicationDbContext>(
-    opt => opt.UseInMemoryDatabase("InMemory"));
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<IEjercicioRepository, EjercicioRepository>();
+
+builder.Services.AddScoped<IEjerciciosService, EjerciciosService>();
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 

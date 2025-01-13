@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ejercicios-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ejercicioservice
+  template:
+    metadata:
+      labels:
+        app: ejercicioservice
+    spec:
+      containers:
+        - name: ejercicioservice
+          image: jowyyo/ejercicioservice:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ejercicios-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: ejercicioservice
+  ports:
+  - name: ejercicioservice
+    protocol: TCP
+    port: 80
+    targetPort: 80

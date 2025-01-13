@@ -1,5 +1,6 @@
-﻿using EjercicioService.Application.Repository;
+﻿using EjercicioService.Application.Repositories;
 using EjercicioService.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace EjercicioService.Infrastructure.Repositories
 {
@@ -12,24 +13,36 @@ namespace EjercicioService.Infrastructure.Repositories
             _db = db;
         }
 
-        public void Create(Ejercicio ejercicio)
+        public async Task<Ejercicio> CreateAsync(Ejercicio ejercicio)
         {
-            _db.Ejercicios.Add(ejercicio);
+            await _db.Ejercicios.AddAsync(ejercicio);
+            await _db.SaveChangesAsync();
+
+            return ejercicio;
         }
 
-        public IEnumerable<Ejercicio> GetAll()
+        public async Task DeleteAsync(Ejercicio ejercicio)
         {
-            return _db.Ejercicios.ToList();
+            _db.Ejercicios.Remove(ejercicio);
+            await _db.SaveChangesAsync();
         }
 
-        public Ejercicio GetById(Guid id)
+        public async Task<IEnumerable<Ejercicio>> GetAllAsync()
         {
-            return _db.Ejercicios.FirstOrDefault(x => x.Id == id);
+            return await _db.Ejercicios.ToListAsync();
         }
 
-        public bool SaveChanges()
+        public async Task<Ejercicio> GetByIdAsync(Guid id)
         {
-            return _db.SaveChanges() >= 0;
+            return await _db.Ejercicios.FirstOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task<Ejercicio> UpdateAsync(Ejercicio ejercicio)
+        {
+            _db.Ejercicios.Update(ejercicio);
+            await _db.SaveChangesAsync();
+
+            return ejercicio;
         }
     }
 }
