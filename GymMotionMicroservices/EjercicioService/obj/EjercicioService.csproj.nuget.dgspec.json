@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Code\\GymMotionMicroservices\\EjercicioService\\EjercicioService.csproj": {}
+    "C:\\Code\\GymMotionMicroservices\\GymMotionMicroservices\\EjercicioService\\EjercicioService.csproj": {}
   },
   "projects": {
-    "C:\\Code\\GymMotionMicroservices\\EjercicioService\\EjercicioService.csproj": {
+    "C:\\Code\\GymMotionMicroservices\\GymMotionMicroservices\\EjercicioService\\EjercicioService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Code\\GymMotionMicroservices\\EjercicioService\\EjercicioService.csproj",
+        "projectUniqueName": "C:\\Code\\GymMotionMicroservices\\GymMotionMicroservices\\EjercicioService\\EjercicioService.csproj",
         "projectName": "EjercicioService",
-        "projectPath": "C:\\Code\\GymMotionMicroservices\\EjercicioService\\EjercicioService.csproj",
+        "projectPath": "C:\\Code\\GymMotionMicroservices\\GymMotionMicroservices\\EjercicioService\\EjercicioService.csproj",
         "packagesPath": "C:\\Users\\Joneadan\\.nuget\\packages\\",
-        "outputPath": "C:\\Code\\GymMotionMicroservices\\EjercicioService\\obj\\",
+        "outputPath": "C:\\Code\\GymMotionMicroservices\\GymMotionMicroservices\\EjercicioService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -51,9 +51,31 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
