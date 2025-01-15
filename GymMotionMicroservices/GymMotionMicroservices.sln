@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjercicioService", "Ejercic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntrenamientoService", "EntrenamientoService\EntrenamientoService.csproj", "{2DF7FEC1-F0DD-4010-AEA6-191C0F830EEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{D74339DC-9630-474A-99BA-C6A64FC9E785}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{2DF7FEC1-F0DD-4010-AEA6-191C0F830EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DF7FEC1-F0DD-4010-AEA6-191C0F830EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DF7FEC1-F0DD-4010-AEA6-191C0F830EEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D74339DC-9630-474A-99BA-C6A64FC9E785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D74339DC-9630-474A-99BA-C6A64FC9E785}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D74339DC-9630-474A-99BA-C6A64FC9E785}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D74339DC-9630-474A-99BA-C6A64FC9E785}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
