@@ -8,8 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-
 var ocelot = builder.Services.AddOcelot();
+
 builder.WebHost.ConfigureAppConfiguration((hostingContext, config) =>
 {
     config.AddOcelotConfigFiles("./Routes", new[]
