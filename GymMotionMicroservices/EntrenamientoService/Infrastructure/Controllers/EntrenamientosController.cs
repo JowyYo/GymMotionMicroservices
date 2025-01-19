@@ -28,11 +28,11 @@ namespace EntrenamientoService.Infrastructure.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateAsync(Guid id, [FromBody] EntrenamientoDto ejercicioDto)
+        public async Task<IActionResult> UpdateAsync(Guid id, [FromBody] EntrenamientoDto entrenamientoDto)
         {
             try
             {
-                return Ok(await _service.UpdateAsync(id, ejercicioDto));
+                return Ok(await _service.UpdateAsync(id, entrenamientoDto));
             }
             catch (Exception ex)
             {
@@ -41,11 +41,11 @@ namespace EntrenamientoService.Infrastructure.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] EntrenamientoDto ejercicioDto)
+        public async Task<IActionResult> CreateAsync([FromBody] EntrenamientoDto entrenamientoDto)
         {
             try
             {
-                return Ok(await _service.CreateAsync(ejercicioDto));
+                return Ok(await _service.CreateAsync(entrenamientoDto));
             }
             catch (Exception ex)
             {

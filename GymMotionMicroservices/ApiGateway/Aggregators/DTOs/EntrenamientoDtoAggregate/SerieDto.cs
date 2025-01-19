@@ -1,4 +1,4 @@
-﻿namespace EntrenamientoService.Application.DTOs
+﻿namespace ApiGateway.Aggregators.DTOs.EntrenamientoDtoAggregate
 {
     public class SerieDto
     {

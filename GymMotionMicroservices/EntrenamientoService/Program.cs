@@ -1,4 +1,7 @@
+using EntrenamientoService.Application.Repositories;
+using EntrenamientoService.Application.Services;
 using EntrenamientoService.Infrastructure;
+using EntrenamientoService.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +17,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
+builder.Services.AddScoped<IEntrenamientoRepository, EntrenamientoRepository>();
+builder.Services.AddScoped<IEntrenamientosService, EntrenamientosService>();
 
 var app = builder.Build();
 

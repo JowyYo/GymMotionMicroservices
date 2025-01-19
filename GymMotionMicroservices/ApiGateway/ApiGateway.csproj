@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Aggregators\DTOs\" />
     <Folder Include="Routes\" />
   </ItemGroup>
 

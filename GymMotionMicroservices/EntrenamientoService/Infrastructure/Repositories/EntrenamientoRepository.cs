@@ -29,12 +29,18 @@ namespace EntrenamientoService.Infrastructure.Repositories
 
         public async Task<IEnumerable<Entrenamiento>> GetAllAsync()
         {
-            return await _db.Entrenamientos.ToListAsync();
+            return await _db.Entrenamientos
+                .Include("Ejercicios")
+                .Include("Ejercicios.Series")
+                .ToListAsync();
         }
 
         public async Task<Entrenamiento> GetByIdAsync(Guid id)
         {
-            return await _db.Entrenamientos.FirstOrDefaultAsync(x => x.Id == id);
+            return await _db.Entrenamientos
+                .Include("Ejercicios")
+                .Include("Ejercicios.Series")
+                .FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<Entrenamiento> UpdateAsync(Entrenamiento ejercicio)

@@ -1,3 +1,4 @@
+using ApiGateway.Aggregators;
 using ApiGateway.Extensions;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
@@ -9,6 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 
 var ocelot = builder.Services.AddOcelot();
+ocelot.AddSingletonDefinedAggregator<GetAllEntrenamientosAggregator>();
+ocelot.AddSingletonDefinedAggregator<GetEntrenamientoByIdAggregator>();
 
 builder.WebHost.ConfigureAppConfiguration((hostingContext, config) =>
 {

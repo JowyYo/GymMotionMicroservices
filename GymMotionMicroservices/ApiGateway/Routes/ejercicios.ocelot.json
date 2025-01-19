@@ -11,6 +11,19 @@
             ],
             "UpstreamPathTemplate": "/ejercicios/{everything}",
             "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/ejercicios",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7122
+                }
+            ],
+            "UpstreamPathTemplate": "/ejercicios",
+            "UpstreamHttpMethod": [ "GET" ],
+            "Key": "GetAllEjercicios"
         }
     ]
 }

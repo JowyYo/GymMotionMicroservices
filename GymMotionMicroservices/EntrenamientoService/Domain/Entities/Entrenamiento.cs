@@ -10,11 +10,16 @@
 
         public void Update(Entrenamiento ejercicio)
         {
-            if (string.IsNullOrEmpty(ejercicio.Name))
-                throw new ArgumentNullException("El nombre del ejercicio tiene que venir informado");
+            ejercicio.Validate();
 
             Name = ejercicio.Name;
             Description = ejercicio.Description;
+        }
+
+        public void Validate()
+        {
+            if (string.IsNullOrEmpty(Name))
+                throw new ArgumentNullException("El nombre del ejercicio tiene que venir informado");
         }
     }
 }
