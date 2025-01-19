@@ -1,3 +1,4 @@
+using ApiGateway.Extensions;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
@@ -7,9 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-builder.Configuration.AddJsonFile("ocelot.json");
 
-builder.Services.AddOcelot();
+var ocelot = builder.Services.AddOcelot();
+builder.WebHost.ConfigureAppConfiguration((hostingContext, config) =>
+{
+    config.AddOcelotConfigFiles("./Routes", new[]
+    {
+        "common", "ejercicios", "entrenamientos"
+    });
+});
 
 var app = builder.Build();
 

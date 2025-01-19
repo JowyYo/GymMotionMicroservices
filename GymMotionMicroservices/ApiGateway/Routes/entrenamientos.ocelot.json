@@ -1,0 +1,16 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/entrenamientos/{everything}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7002
+                }
+            ],
+            "UpstreamPathTemplate": "/entrenamientos/{everything}",
+            "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+        }
+    ]
+}
