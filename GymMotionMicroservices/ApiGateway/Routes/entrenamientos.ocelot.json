@@ -1,0 +1,60 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/entrenamientos/{everything}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7002
+                }
+            ],
+            "UpstreamPathTemplate": "/entrenamientos/{everything}",
+            "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/entrenamientos",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7002
+                }
+            ],
+            "UpstreamPathTemplate": "/entrenamientos",
+            "UpstreamHttpMethod": [ "GET" ],
+            "Key": "GetAllEntrenamientos"
+        },
+        {
+            "DownstreamPathTemplate": "/api/entrenamientos/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7002
+                }
+            ],
+            "UpstreamPathTemplate": "/entrenamientos/{id}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "Key": "GetEntrenamientoById"
+        }
+    ],
+    "Aggregates": [
+        {
+            "RouteKeys": [
+                "GetAllEntrenamientos",
+                "GetAllEjercicios"
+            ],
+            "UpstreamPathTemplate": "/GetAllEntrenamientos",
+            "Aggregator":  "GetAllEntrenamientosAggregator"
+        },
+        {
+            "RouteKeys": [
+                "GetEntrenamientoById",
+                "GetAllEjercicios"
+            ],
+            "UpstreamPathTemplate": "/GetEntrenamientoById/{id}",
+            "Aggregator": "GetEntrenamientoByIdAggregator"
+        }
+    ]
+}
